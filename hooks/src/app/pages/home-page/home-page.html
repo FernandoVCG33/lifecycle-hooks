@@ -1,1 +1,8 @@
 <p>home-page works!</p>
+
+
+<h3>Tradicional {{ tradicionalProperty }}</h3>
+<h3>Signa {{ signalPrperty() }}</h3>
+<button  (click)="changeTradiciona()"  >Cambiar Tradicional</button>
+<button (click)="changeSingna()"  >Cambiar Senial</button>
+<app-title [titleC]="tradicionalProperty"/>

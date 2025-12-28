@@ -1,8 +1,9 @@
 import {
   AfterContentChecked,
   AfterContentInit, AfterViewChecked, AfterViewInit,
-  Component, DoCheck, OnChanges, OnDestroy, OnInit, SimpleChanges
+  Component, DoCheck, OnChanges, OnDestroy, OnInit, signal, SimpleChanges
 } from '@angular/core';
+import {Title} from '../../components/title/title';
 
 
 const log=(...messages:any[])=>{
@@ -11,13 +12,24 @@ const log=(...messages:any[])=>{
 
 @Component({
   selector: 'app-home-page',
-  imports: [],
+  imports: [
+    Title
+  ],
   templateUrl: './home-page.html',
 })
 export class HomePage implements OnInit {
+  tradicionalProperty='Fernando';
+  signalPrperty=signal('Fernando Signal');
   constructor() {
     log('Constructor llamado');
     // afterNextRender y afterEveryRender se usan aquí
+  }
+
+  changeTradiciona(){
+    this.tradicionalProperty='Fernando Catacora';
+  }
+  changeSingna(){
+    this.signalPrperty.set('Fernando Signal Catacora');
   }
 
   ngOnInit() {

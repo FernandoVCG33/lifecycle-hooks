@@ -4,46 +4,51 @@ import {
   Component, DoCheck, OnChanges, OnDestroy, OnInit, SimpleChanges
 } from '@angular/core';
 
+
+const log=(...messages:any[])=>{
+  console.log(`${messages[0]} %c${ messages.slice(1).join(',')}`, `color:#baba55`, ...messages.slice(1))
+}
+
 @Component({
   selector: 'app-home-page',
   imports: [],
   templateUrl: './home-page.html',
 })
-export class HomePage implements OnInit, OnChanges, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy {
+export class HomePage implements OnInit {
   constructor() {
-    console.log('Constructor llamado');
+    log('Constructor llamado');
     // afterNextRender y afterEveryRender se usan aquí
   }
 
   ngOnInit() {
-    console.log('ngOnInit llamado');
+    log('ngOnInit llamado');
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    console.log('ngOnChanges llamado', changes);
+    log('ngOnChanges llamado', changes);
   }
 
   ngDoCheck() {
-    console.log('ngDoCheck llamado');
+    log('ngDoCheck llamado');
   }
 
   ngAfterContentInit() {
-    console.log('ngAfterContentInit llamado');
+    log('ngAfterContentInit llamado');
   }
 
   ngAfterContentChecked() {
-    console.log('ngAfterContentChecked llamado');
+    log('ngAfterContentChecked llamado');
   }
 
   ngAfterViewInit() {
-    console.log('ngAfterViewInit llamado');
+    log('ngAfterViewInit llamado');
   }
 
   ngAfterViewChecked() {
-    console.log('ngAfterViewChecked llamado');
+    log('ngAfterViewChecked llamado');
   }
 
   ngOnDestroy() {
-    console.log('ngOnDestroy llamado');
+    log('ngOnDestroy llamado');
   }
 }

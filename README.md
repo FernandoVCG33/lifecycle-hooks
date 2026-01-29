@@ -4,4 +4,10 @@ El siguiente Repositorio almacenará información de cómo es el ciclos de vida 
 El objetivo aca es mostrar como funionan los ``lifecycle-hooks`` en Angular. 
 
 ## Como descagar
+1. Descagar 
+
+```
+cd sitios_personales
+
+```
 
